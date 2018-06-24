@@ -1,0 +1,61 @@
+* {
+    padding:0;
+    margin:0;
+}
+#pad{
+    border:1px solid red;
+}
+button{
+    font-family:"Sofia";
+}
+.ColorButtons{
+    height:30px;
+    width:60px;
+    padding:0;
+    color:white;
+    outline:none;
+    transition:all 350ms;
+    margin:1px;
+}
+.utils{
+    height:30px;
+    width:65px;
+}
+#eraser{
+    color:white;
+    background:linear-gradient(60deg,blue,cyan);
+    border:1px solid lime;
+    outline:none;
+}
+#red{
+    background-color:red;
+    border:2px solid red;
+}
+#green{
+    background-color:green;
+    border:2px solid green;
+}
+#blue{
+    background-color:blue;
+    border:2px solid blue;
+}
+#cyan{
+    background-color:cyan;
+    border:2px solid cyan;
+}
+#black{
+    background-color:black;
+    border:2px solid black;
+}
+#lime{
+    background-color:lime;
+    border:2px solid lime;
+}
+#yellow{
+    background-color:yellow;
+    border:2px solid yellow;
+}
+#orange{
+    background-color:orange;
+    border:2px solid orange;
+}
