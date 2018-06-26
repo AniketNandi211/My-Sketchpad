@@ -1,12 +1,7 @@
-/*
-This is just a test. I'll do more improvements on it to make it more responsive. I might add framework into it I'm not sure what framework I gonna use..but... and if you like this then please give me feedback I need it. Thanx for reading all lines of this section ^_^
-Have a nice day...or night, 
-you know what I mean, right!
-              :D
-*/
 window.onload=function(){
 paint=1;
     var canvas=document.getElementById("pad");
+    var canvasOffset = pad.offsetTop;
 c=canvas.getContext("2d");
 window.addEventListener("resize",loadOut,false);
 var Start={x:undefined,y:undefined}; Move={x:undefined,y:undefined};
@@ -17,7 +12,7 @@ ColorButtons= [document.getElementById("red"),document.getElementById("blue"),do
 
 canvas.ontouchstart=function(e){
     Start.x=e.touches[0].pageX;
-    Start.y=e.touches[0].pageY-50;
+    Start.y=e.touches[0].pageY-canvasOffset;
     e.preventDefault();
     if(paint === 1){
         makeDot();
@@ -26,7 +21,7 @@ canvas.ontouchstart=function(e){
 
 canvas.ontouchmove=function(e){
     Move.x=e.touches[0].pageX;
-    Move.y=e.touches[0].pageY-50;
+    Move.y=e.touches[0].pageY-canvasOffset;
     e.preventDefault();
     if(paint === 1){
     makeLine();
@@ -34,12 +29,11 @@ canvas.ontouchmove=function(e){
     else {
         eraser();
     }
-  //see(Move.x+" "+Move.y);
 } //touckMove end
 
  function loadOut(){
   canvas.width=window.innerWidth;
- canvas.height=window.innerHeight;
+ canvas.height=window.innerHeight-canvasOffset;
  
  } //loadOut end
     loadOut();
