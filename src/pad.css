@@ -3,23 +3,26 @@
     margin:0;
 }
 #pad{
-    border:1px solid red;
+    border:1px solid lime;
 }
 button{
     font-family:"Sofia";
 }
 .ColorButtons{
     height:30px;
-    width:60px;
+    width: 10%;
     padding:0;
     color:white;
     outline:none;
     transition:all 350ms;
-    margin:1px;
+    margin:5px 1px;
+    border-radius: 5px;
+    width: 30.6666666667%;
 }
 .utils{
     height:30px;
-    width:65px;
+    width: 30.6666666667%;
+    border-radius: 5px;
 }
 #eraser{
     color:white;

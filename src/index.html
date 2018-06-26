@@ -2,24 +2,25 @@
 <html>
     <head>
         <title>My Sketch Pad</title>
- <meta charset="UTF-8"/>
+ <meta charset="utf-8"/>
  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+
  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia"/>
  <link rel="stylesheet" href="pad.css">
  <script src="sketchpad.js"></script>
     </head>
     <body>
-  <button id="red" onclick="takeColorRed()" class="ColorButtons">Red</button>
+    <button id="red" onclick="takeColorRed()" class="ColorButtons">Red</button>
     <button id="blue" class="ColorButtons" onclick="takeColorBlue()">Blue</button>
     <button id="green" class="ColorButtons" onclick="takeColorGreen()">Green</button>
-    <button id="cyan" class="ColorButtons" onclick="takeColorCyan()">Cyan</button>
-        <button id="eraser" class="utils" onclick="eraser()">Eraser</button>
     <br/>
+    <button id="cyan" class="ColorButtons" onclick="takeColorCyan()">Cyan</button>
+    <button id="eraser" class="utils" onclick="eraser()">Eraser</button>
     <button id="black" class="ColorButtons" onclick="takeColorBlack()">Black</button>
+    <br/>
     <button id="lime" class="ColorButtons" onclick="takeColorLime()">Lime</button>
-     <button id="yellow" class="ColorButtons" onclick="takeColorYellow()">Yellow</button>
-     <button id="orange" class="ColorButtons" onclick="takeColorOrange()">Orange</button>
-     
+    <button id="yellow" class="ColorButtons" onclick="takeColorYellow()">Yellow</button>
+    <button id="orange" class="ColorButtons" onclick="takeColorOrange()">Orange</button>
         <canvas id="pad"></canvas>
     </body>
 </html>

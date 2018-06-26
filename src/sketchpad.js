@@ -4,7 +4,6 @@ Have a nice day...or night,
 you know what I mean, right!
               :D
 */
-alert("Sorry, Buttons width and height are just static , I'll fix it soon");
 window.onload=function(){
 paint=1;
     var canvas=document.getElementById("pad");
@@ -23,12 +22,12 @@ canvas.ontouchstart=function(e){
     if(paint === 1){
         makeDot();
     }
-  //see(Start.x+" "+Start.y);
 } //tchstrt end
 
 canvas.ontouchmove=function(e){
     Move.x=e.touches[0].pageX;
     Move.y=e.touches[0].pageY-50;
+    e.preventDefault();
     if(paint === 1){
     makeLine();
     }
@@ -37,14 +36,7 @@ canvas.ontouchmove=function(e){
     }
   //see(Move.x+" "+Move.y);
 } //touckMove end
-/*canvas.ontouchmove=function(e){
-    Eraser.x=e.touches[0].pageX;
-    Eraser.y=e.touches[0].pageY-50;
-}*/
-window.ontouchmove=function(e){
-    e.preventDefault();
-}
- 
+
  function loadOut(){
   canvas.width=window.innerWidth;
  canvas.height=window.innerHeight;
