@@ -6,8 +6,8 @@ c=canvas.getContext("2d");
 window.addEventListener("resize",loadOut,false);
 var Start={x:undefined,y:undefined}; Move={x:undefined,y:undefined};
 Eraser={x:undefined ,y:undefined };
-//grabing The Color Buttons in Global List ColorButtons
-ColorButtons= [document.getElementById("red"),document.getElementById("blue"),document.getElementById("green"),document.getElementById("cyan"),document.getElementById("black"),document.getElementById("lime"),document.getElementById("yellow"),document.getElementById("orange"),document.getElementById("eraser")];
+//grabing The Color Buttons in Global List ColorButtons [Don't change the orders]
+ColorButtons= [document.getElementById("red"),document.getElementById("blue"),document.getElementById("green"),document.getElementById("cyan"),document.getElementById("black"),document.getElementById("lime"),document.getElementById("orange"),document.getElementById("eraser")];
 
 
 canvas.ontouchstart=function(e){
@@ -29,7 +29,7 @@ canvas.ontouchmove=function(e){
     else {
         eraser();
     }
-} //touckMove end
+} //touchMove end
 
  function loadOut(){
   canvas.width=window.innerWidth;
@@ -58,7 +58,7 @@ function makeLine(){
 function takeColorRed(){
     paint = 1;
     c.strokeStyle="red";
-   ColorButtons[8].style.background="linear-gradient(60deg,blue,cyan)"; ColorButtons[0].style.backgroundColor="white";
+   ColorButtons[7].style.background="linear-gradient(60deg,blue,cyan)"; ColorButtons[0].style.backgroundColor="white";
     ColorButtons[0].style.color="red"; for(i=0;i<ColorButtons.length;i++){
         if(i!==0){
             ColorButtons[i].style.backgroundColor=ColorButtons[i].getAttribute("id");
@@ -70,7 +70,7 @@ function takeColorRed(){
 function takeColorBlue(){
     paint = 1;
     c.strokeStyle="blue";
-  ColorButtons[8].style.background="linear-gradient(60deg,blue,cyan)"; ColorButtons[1].style.backgroundColor="white";
+  ColorButtons[7].style.background="linear-gradient(60deg,blue,cyan)"; ColorButtons[1].style.backgroundColor="white";
     ColorButtons[1].style.color="blue"; for(i=0;i<ColorButtons.length;i++){
         if(i!==1){
             ColorButtons[i].style.backgroundColor=ColorButtons[i].getAttribute("id");
@@ -82,7 +82,7 @@ function takeColorBlue(){
 function takeColorGreen(){
     paint = 1;
     c.strokeStyle="green";
-   ColorButtons[8].style.background="linear-gradient(60deg,blue,cyan)"; ColorButtons[2].style.backgroundColor="white";
+   ColorButtons[7].style.background="linear-gradient(60deg,blue,cyan)"; ColorButtons[2].style.backgroundColor="white";
     ColorButtons[2].style.color="green"; for(i=0;i<ColorButtons.length;i++){
         if(i!==2){
             ColorButtons[i].style.backgroundColor=ColorButtons[i].getAttribute("id");
@@ -94,7 +94,7 @@ function takeColorGreen(){
 function takeColorCyan(){
     paint = 1;
     c.strokeStyle="cyan";
-   ColorButtons[8].style.background="linear-gradient(60deg,blue,cyan)"; ColorButtons[3].style.backgroundColor="white";
+   ColorButtons[7].style.background="linear-gradient(60deg,blue,cyan)"; ColorButtons[3].style.backgroundColor="white";
     ColorButtons[3].style.color="cyan"; for(i=0;i<ColorButtons.length;i++){
         if(i!==3){
             ColorButtons[i].style.backgroundColor=ColorButtons[i].getAttribute("id");
@@ -106,7 +106,7 @@ function takeColorCyan(){
 function takeColorBlack(){
     paint = 1;
     c.strokeStyle="black";
-   ColorButtons[8].style.background="linear-gradient(60deg,blue,cyan)"; ColorButtons[4].style.backgroundColor="white";
+   ColorButtons[7].style.background="linear-gradient(60deg,blue,cyan)"; ColorButtons[4].style.backgroundColor="white";
     ColorButtons[4].style.color="black"; for(i=0;i<ColorButtons.length;i++){
         if(i!==4){
             ColorButtons[i].style.backgroundColor=ColorButtons[i].getAttribute("id");
@@ -119,30 +119,19 @@ function takeColorLime(){
     paint = 1;
     c.strokeStyle="lime";
     ColorButtons[5].style.backgroundColor="white";
-   ColorButtons[8].style.background="linear-gradient(60deg,blue,cyan)"; ColorButtons[5].style.color="lime"; for(i=0;i<ColorButtons.length;i++){
+   ColorButtons[7].style.background="linear-gradient(60deg,blue,cyan)"; ColorButtons[5].style.color="lime"; for(i=0;i<ColorButtons.length;i++){
         if(i!==5){
             ColorButtons[i].style.backgroundColor=ColorButtons[i].getAttribute("id");
            ColorButtons[i].style.color="white";
         }
     }
-}
-function takeColorYellow(){
-    paint = 1;
-    c.strokeStyle="yellow";
-   ColorButtons[8].style.background="linear-gradient(60deg,blue,cyan)"; ColorButtons[6].style.backgroundColor="white";
-    ColorButtons[6].style.color="yellow"; for(i=0;i<ColorButtons.length;i++){
-        if(i!==6){
-            ColorButtons[i].style.backgroundColor=ColorButtons[i].getAttribute("id");
-           ColorButtons[i].style.color="white";
-        }
-    }
-}
+}     //yellow paint has been rejected
 function takeColorOrange(){
     paint = 1;
     c.strokeStyle="orange";
-   ColorButtons[8].style.background="linear-gradient(60deg,blue,cyan)"; ColorButtons[7].style.backgroundColor="white";
-    ColorButtons[7].style.color="orange"; for(i=0;i<ColorButtons.length;i++){
-        if(i!==7){
+   ColorButtons[7].style.background="linear-gradient(60deg,blue,cyan)"; ColorButtons[6].style.backgroundColor="white";
+    ColorButtons[6].style.color="orange"; for(i=0;i<ColorButtons.length;i++){
+        if(i!==6){
             ColorButtons[i].style.backgroundColor=ColorButtons[i].getAttribute("id");
            ColorButtons[i].style.color="white";
         }
@@ -158,9 +147,9 @@ function eraser(){
     } else{
     c.clearRect(Move.x,Move.y,20,20);}
     paint = 1;
-    ColorButtons[8].style.background="linear-gradient(red,black)";
-    ColorButtons[8].style.color="white"; for(i=0;i<ColorButtons.length;i++){
-        if(i!==8){
+    ColorButtons[7].style.background="linear-gradient(red,black)";
+    ColorButtons[7].style.color="white"; for(i=0;i<ColorButtons.length;i++){
+        if(i!==7){
             ColorButtons[i].style.backgroundColor=ColorButtons[i].getAttribute("id");
            ColorButtons[i].style.color="white";
         }
@@ -169,8 +158,16 @@ function eraser(){
 
     paint = 0;
 }
+//  Custom color function
 function takeColorCustom(){
-   //c.strokeStyle = ctmColor;
+    paint = 1;
+   c.strokeStyle = document.getElementById("customcolor").value;
+   for (i = 0; i < ColorButtons.length; i++) {
+    ColorButtons[i].style.color = "white";
+    ColorButtons[i].style.backgroundColor=ColorButtons[i].getAttribute("id");
+   }
+   ColorButtons[7].style.background="linear-gradient(60deg, blue, cyan)";
+   ColorButtons[7].style.color="white";
 }
 
 //My fun to check if the things are working properly or not..

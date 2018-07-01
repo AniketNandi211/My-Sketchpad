@@ -9,19 +9,20 @@ body {
     border:2px solid #dddddd;
     background-color: white;
 }
+    outline:none;
 button{
     font-family:"Sofia";
 }
 .ColorButtons{
+    outline: none;
     height:30px;
     padding:0;
     color:white;
     font-weight: bold;
-    outline:none;
     transition:all 350ms;
     margin:5px 1px;
     border-radius: 5px;
-    width: 30.6666666667%;
+    width: 30.6666666667%;  
 }
 .utils{
     height:30px;
@@ -65,4 +66,7 @@ button{
 #orange{
     background-color:orange;
     border:2px solid orange;
+}
+#customcolor {
+
 }
