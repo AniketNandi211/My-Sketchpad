@@ -2,8 +2,12 @@
     padding:0;
     margin:0;
 }
+body {
+    background-color: whitesmoke;
+}
 #pad{
-    border:1px solid lime;
+    border:2px solid #dddddd;
+    background-color: white;
 }
 button{
     font-family:"Sofia";
@@ -12,6 +16,7 @@ button{
     height:30px;
     padding:0;
     color:white;
+    font-weight: bold;
     outline:none;
     transition:all 350ms;
     margin:5px 1px;
